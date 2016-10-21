@@ -29,6 +29,3 @@ class FileReader:
 
         self.last_read_file = properties_dictionary
         return  properties_dictionary
-
-test = FileReader()
-print(test.readFile("emptyfile.txt"))
