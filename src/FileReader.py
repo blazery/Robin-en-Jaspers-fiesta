@@ -27,12 +27,11 @@ class FileReader:
             if temp_key in self.properties.properties:
                 if self.valueTypeValidate(temp_key, temp_value):
                     properties_dictionary[temp_key] = temp_value
-                    
+
         self.last_read_file = properties_dictionary
         return properties_dictionary
 
-
-
+    # only validates int, bool, and string
     def valueTypeValidate(self, key, value):
         if self.properties.properties[key] == "int":
             if value.isdigit():
