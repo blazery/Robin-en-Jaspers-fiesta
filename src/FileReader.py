@@ -1,9 +1,9 @@
-from PropertyList import PropertyList
+import PropertyList
 
 class FileReader:
 
     last_read_file = None
-    properties = PropertyList()
+    properties = PropertyList.PropertyList()
 
 
     def readFile(self, path):
@@ -27,9 +27,10 @@ class FileReader:
             if temp_key in self.properties.properties:
                 if self.valueTypeValidate(temp_key, temp_value):
                     properties_dictionary[temp_key] = temp_value
-
+                    
         self.last_read_file = properties_dictionary
         return properties_dictionary
+
 
 
     def valueTypeValidate(self, key, value):
