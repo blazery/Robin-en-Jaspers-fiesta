@@ -1,13 +1,17 @@
 class PropertyList:
-    properties = list()
+    properties = dict()
 
     def __init__(self):
         properties_file = open("MonsterProperties.txt", 'r')
 
         for s in properties_file.readlines():
             if s != "\n":
-                self.properties.append(s.strip(' ').rstrip('\n').upper())
+                temp_key = s.split(':')[0].strip(' ').upper()
 
+                try:
+                    temp_value = s.split(':')[1].strip(' ').strip('\n')
+                except:
+                    print("INVALID VALUE IN MONSTER PROPERTIES")
+                    return
 
-
-PropertyList()
+                self.properties[temp_key] = temp_value

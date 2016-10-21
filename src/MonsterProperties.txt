@@ -1,27 +1,27 @@
-Head
-Torso
-Body Type
-Wings
-Can fly
-Legs
-Arms
-Speed
-Claws
-Horns
-Hands
-Can hold
-Can speak
-Mouths
-Eyes
-Ears
-Hearing
-Sight
-Intelligence
-Tails
-Tentacles
-Fins
-Breathes
-Has gills
-Noses
-Smell
-Spikes
+Head: int
+Torso:
+Body Type:
+Wings: int
+Can fly: bool
+Legs: int
+Arms: int
+Speed: int
+Claws: int
+Horns: int
+Hands:int
+Can hold: bool
+Can speak: bool
+Mouths: int
+Eyes: int
+Ears: int
+Hearing: int
+Sight: int
+Intelligence: int
+Tails: int
+Tentacles: int
+Fins: int
+Breathes: bool
+Has gills: bool
+Noses: int
+Smell: bool
+Spikes: int
