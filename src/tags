@@ -1,0 +1,17 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+FileReader	Main.py	/^class FileReader:$/;"	c
+Monster	Monster.py	/^class Monster:$/;"	c
+MonsterBuilder	MonsterBuilder.py	/^class MonsterBuilder:$/;"	c
+__init__	Main.py	/^        def __init__(self):$/;"	m	class:FileReader
+__init__	MonsterBuilder.py	/^    def __init__(self, attributes):$/;"	m	class:MonsterBuilder
+buildMonster	MonsterBuilder.py	/^    def buildMonster(self):$/;"	m	class:MonsterBuilder
+builder	Tests.py	/^builder = MonsterBuilder.MonsterBuilder([1, 2])$/;"	v
+readFile	Main.py	/^        def readFile(self, path):$/;"	m	class:FileReader
+template	MonsterBuilder.py	/^    template = None$/;"	v	class:MonsterBuilder
+test	Main.py	/^test = FileReader()$/;"	v
+torso	Monster.py	/^    torso = []$/;"	v	class:Monster
