@@ -1,2 +1,2 @@
 class Monster:
-    torso = []
+    torso = {}
