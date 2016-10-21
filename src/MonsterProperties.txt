@@ -1,0 +1,27 @@
+Head
+Torso
+Body Type
+Wings
+Can fly
+Legs
+Arms
+Speed
+Claws
+Horns
+Hands
+Can hold
+Can speak
+Mouths
+Eyes
+Ears
+Hearing
+Sight
+Intelligence
+Tails
+Tentacles
+Fins
+Breathes
+Has gills
+Noses
+Smell
+Spikes

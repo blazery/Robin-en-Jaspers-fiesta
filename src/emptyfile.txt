@@ -1,0 +1,8 @@
+head: 2
+arms: 4
+legs: 3
+shards: 3
+can fly: True
+ma dick: false
+Bushit arumgent: nope
+strange :input: test
