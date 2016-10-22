@@ -1,0 +1,37 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Bodypart	Bodypart.py	/^class Bodypart:$/;"	c
+FileReader	FileReader.py	/^class FileReader:$/;"	c
+FileReader	Main.py	/^class FileReader:$/;"	c
+GameData	GameData.py	/^class GameData:$/;"	c
+Monster	Monster.py	/^class Monster:$/;"	c
+MonsterBuilder	MonsterBuilder.py	/^class MonsterBuilder:$/;"	c
+__init__	Bodypart.py	/^    def __init__(self, part_type, hp = 10):$/;"	m	class:Bodypart
+__init__	GameData.py	/^    def __init__(self):$/;"	m	class:GameData
+__init__	Main.py	/^        def __init__(self):$/;"	m	class:FileReader
+__init__	MonsterBuilder.py	/^    def __init__(self, attributes):$/;"	m	class:MonsterBuilder
+attach_hierarchy	MonsterBuilder.py	/^    attach_hierarchy = {}$/;"	v	class:MonsterBuilder
+buildMonster	MonsterBuilder.py	/^    def buildMonster(self):$/;"	m	class:MonsterBuilder
+builder	Tests.py	/^builder = MonsterBuilder.MonsterBuilder(test_template)$/;"	v
+contains	Bodypart.py	/^    contains = {}$/;"	v	class:Bodypart
+hit_points	Bodypart.py	/^    hit_points = 0$/;"	v	class:Bodypart
+last_read_file	FileReader.py	/^    last_read_file = None$/;"	v	class:FileReader
+loadHierarchy	GameData.py	/^    def loadHierarchy(self, path):$/;"	m	class:GameData
+loadProperties	GameData.py	/^    def loadProperties(self, path):$/;"	m	class:GameData
+monster_hierarchy	GameData.py	/^    monster_hierarchy = dict()$/;"	v	class:GameData
+monster_properties	GameData.py	/^    monster_properties = dict()$/;"	v	class:GameData
+part_type	Bodypart.py	/^    part_type = None$/;"	v	class:Bodypart
+properties	FileReader.py	/^    properties = GameData.GameData().monster_properties$/;"	v	class:FileReader
+readFile	FileReader.py	/^    def readFile(self, path):$/;"	m	class:FileReader
+readFile	Main.py	/^        def readFile(self, path):$/;"	m	class:FileReader
+reader	Tests.py	/^reader = FileReader.FileReader()$/;"	v
+template	MonsterBuilder.py	/^    template = None$/;"	v	class:MonsterBuilder
+test	Main.py	/^test = FileReader()$/;"	v
+test_template	Tests.py	/^test_template = reader.readFile("TestTemplate.txt")$/;"	v
+test_template	Tests.py	/^test_template = {"ARMS" : 2, "LEGS" : 2, "HEADS" : 3, "NECKS" : 3, "HANDS" : 2}$/;"	v
+torso	Monster.py	/^    torso = Bodypart.Bodypart("TORSO")$/;"	v	class:Monster
+valueTypeValidate	FileReader.py	/^    def valueTypeValidate(self, key, value):$/;"	m	class:FileReader
