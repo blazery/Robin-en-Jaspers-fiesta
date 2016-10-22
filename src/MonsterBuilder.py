@@ -1,5 +1,6 @@
 import Monster
 import Bodypart
+import GameData
 
 class MonsterBuilder:
     template = None
@@ -7,12 +8,7 @@ class MonsterBuilder:
 
     def __init__(self, attributes):
         self.template = attributes
-        self.attach_hierarchy["ARMS"] = ["SPIKES", "HANDS"]
-        self.attach_hierarchy["LEGS"] = ["SPIKES", "FEET"]
-        self.attach_hierarchy["TAILS"] = ["SPIKES"]
-        self.attach_hierarchy["WINGS"] = ["SPIKES"]
-        self.attach_hierarchy["NECKS"] = {"HEADS" : ["HORNS", "EARS", "NOSES", "EYES","GILLS", {"MOUTHS" : "TEETH"}]}
-
+        self.attach_hierarchy = GameData.GameData().loadHierarchy("MonsterHierarchy.txt")
 
     def buildMonster(self):
         proto_monster = Monster.Monster()
