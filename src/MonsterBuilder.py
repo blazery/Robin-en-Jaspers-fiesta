@@ -30,13 +30,14 @@ class MonsterBuilder:
     def recursiveBuild(self, body_part):
         for hierarchy_part in self.attach_hierarchy[body_part.part_type]:
             if hierarchy_part in self.template.keys():
-                if not hierarchy_part in self.attach_hierarchy["TORSO"]:
-                    if hierarchy_part in self.slots.keys(): #this would mean its not connected to torso
-                        amount = math.ceil(self.template[hierarchy_part] / self.slots[hierarchy_part])
+                if hierarchy_part in self.slots.keys(): #this would mean its not connected to torso
+                    if  hierarchy_part in self.attach_hierarchy["TORSO"]:
+
+                        amount = math.ceil(self.template[hierarchy_part] / (self.slots[hierarchy_part] + 1))
                         for i in range(amount):
                             body_part.contains.append(Bodypart.Bodypart(hierarchy_part))
                     else:
-                        amount =math.ceil( self.template[hierarchy_part] / self.slots[hierarchy_part] + 1)
+                        amount =math.ceil( self.template[hierarchy_part] / self.slots[hierarchy_part])
                         for i in range(amount):
                             body_part.contains.append(Bodypart.Bodypart(hierarchy_part))
                 else:

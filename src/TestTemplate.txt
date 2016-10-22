@@ -4,3 +4,5 @@ feet: 2
 hands: 2
 necks: 1
 heads: 1
+wings : 2
+tentacles: 3
