@@ -47,4 +47,3 @@ class GameData:
                         temp_dict[temp_key] = [temp_value]
         return temp_dict
 
-
