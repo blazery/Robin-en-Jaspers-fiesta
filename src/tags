@@ -17,6 +17,7 @@ __init__	MonsterBuilder.py	/^    def __init__(self, attributes):$/;"	m	class:Mon
 attach_hierarchy	MonsterBuilder.py	/^    attach_hierarchy = {}$/;"	v	class:MonsterBuilder
 buildMonster	MonsterBuilder.py	/^    def buildMonster(self):$/;"	m	class:MonsterBuilder
 builder	Tests.py	/^builder = MonsterBuilder.MonsterBuilder(test_template)$/;"	v
+calcSpaceForBP	MonsterBuilder.py	/^    def calcSpaceForBP(self):$/;"	m	class:MonsterBuilder
 contains	Bodypart.py	/^    contains = {}$/;"	v	class:Bodypart
 hit_points	Bodypart.py	/^    hit_points = 0$/;"	v	class:Bodypart
 last_read_file	FileReader.py	/^    last_read_file = None$/;"	v	class:FileReader
@@ -34,4 +35,5 @@ test	Main.py	/^test = FileReader()$/;"	v
 test_template	Tests.py	/^test_template = reader.readFile("TestTemplate.txt")$/;"	v
 test_template	Tests.py	/^test_template = {"ARMS" : 2, "LEGS" : 2, "HEADS" : 3, "NECKS" : 3, "HANDS" : 2}$/;"	v
 torso	Monster.py	/^    torso = Bodypart.Bodypart("TORSO")$/;"	v	class:Monster
+valueConverter	FileReader.py	/^    def valueConverter(self, key, value):$/;"	m	class:FileReader
 valueTypeValidate	FileReader.py	/^    def valueTypeValidate(self, key, value):$/;"	m	class:FileReader
