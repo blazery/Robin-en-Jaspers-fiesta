@@ -3,6 +3,7 @@ class GameData:
     monster_hierarchy = dict()
 
     def __init__(self):
+        # loads the monster properties
         properties_file = open("MonsterProperties.txt", 'r')
 
         for s in properties_file.readlines():
