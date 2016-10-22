@@ -1,5 +1,6 @@
-class PropertyList:
-    properties = dict()
+class GameData:
+    monster_properties = dict()
+    monster_hierarchy = dict()
 
     def __init__(self):
         properties_file = open("MonsterProperties.txt", 'r')
@@ -14,4 +15,4 @@ class PropertyList:
                     print("INVALID VALUE IN MONSTER PROPERTIES")
                     return
 
-                self.properties[temp_key] = temp_value
+                self.monster_properties[temp_key] = temp_value

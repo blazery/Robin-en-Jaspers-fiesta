@@ -1,9 +1,9 @@
-import PropertyList
+import GameData
 
 class FileReader:
 
     last_read_file = None
-    properties = PropertyList.PropertyList()
+    properties = GameData.GameData().monster_properties
 
 
     def readFile(self, path):
@@ -24,7 +24,7 @@ class FileReader:
             if ':' in s :
                 temp_value = s.split(':')[1].strip(' ').strip('\n')
 
-            if temp_key in self.properties.properties:
+            if temp_key in self.properties:
                 if self.valueTypeValidate(temp_key, temp_value):
                     properties_dictionary[temp_key] = temp_value
 
@@ -33,13 +33,13 @@ class FileReader:
 
     # only validates int, bool, and string
     def valueTypeValidate(self, key, value):
-        if self.properties.properties[key] == "int":
+        if self.properties[key] == "int":
             if value.isdigit():
                 return True
-        elif self.properties.properties[key] == "bool":
+        elif self.properties[key] == "bool":
             if value.upper() == "TRUE" or value.upper() == "FALSE":
                 return True
-        elif self.properties.properties[key] == "string":
+        elif self.properties[key] == "string":
             if value.isalpha():
                 return True
         else:
