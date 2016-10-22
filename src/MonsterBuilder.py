@@ -30,13 +30,14 @@ class MonsterBuilder:
     def recursiveBuild(self, body_part):
         for hierarchy_part in self.attach_hierarchy[body_part.part_type]:
             if hierarchy_part in self.template.keys():
-                if (not hierarchy_part in self.attach_hierarchy["TORSO"]) and (self.not_in_torso(hierarchy_part)):
-                    if hierarchy_part in self.slots.keys(): #this would mean its not connected to torso
-                        amount = math.ceil(self.template[hierarchy_part] / self.slots[hierarchy_part])
+                if hierarchy_part in self.slots.keys(): #this would mean its not connected to torso
+                    if  hierarchy_part in self.attach_hierarchy["TORSO"]:
+
+                        amount = math.ceil(self.template[hierarchy_part] / (self.slots[hierarchy_part] + 1))
                         for i in range(amount):
                             body_part.contains.append(Bodypart.Bodypart(hierarchy_part))
                     else:
-                        amount = math.ceil( self.template[hierarchy_part] / self.slots[hierarchy_part] + 1)
+                        amount =math.ceil( self.template[hierarchy_part] / self.slots[hierarchy_part])
                         for i in range(amount):
                             body_part.contains.append(Bodypart.Bodypart(hierarchy_part))
                 else:
@@ -51,20 +52,24 @@ class MonsterBuilder:
         proto_monster = Monster.Monster()
         self.calcSpaceForBP()
         self.recursiveBuild(proto_monster.torso)
+
+
+
+
+        #for body_part in self.template:
+            #if not body_part in self.slots.keys():
+                ##if not self.template[body_part] == 0:
+                    #for i in range(self.template[body_part]):
+                        #proto_monster.torso.contains[body_part[:-1].lower() + str(i + 1)] = Bodypart.Bodypart(body_part)
+
+        #for entry in self.template:
+            #if entry in self.attach_hierarchy["TORSO"]:
+                #for i in range(self.template[entry]):
+                    #proto_monster.torso.contains[entry + str(i)] = Bodypart.Bodypart(entry)
+            #for torso_part in self.attach_hierarchy["TORSO"]:
+                #for i in range(self.template[entry]):
+                    #if entry in self.attach_hierarchy[torso_part] and torso_part in self.template.keys():
+                        #proto_monster.torso.contains
         return proto_monster
 
-    def not_in_torso(self, hier_part):
-        print("Keys to look at: ", self.attach_hierarchy.keys())
-        print("checking: ", hier_part)
-        blacklist = ["TORSO"]
-        for keye, value in self.attach_hierarchy.items():
-            print("Key skaljd: ", keye)
-            if keye != "TORSO":
-                if hier_part in self.attach_hierarchy[keye]:
-                    print("shit: ", self.attach_hierarchy[keye])
-                    return False
-                else: 
-                    print("shisasast: ", self.attach_hierarchy[keye])
-                    return True
-            else:
-                continue
+
