@@ -18,8 +18,9 @@ class MonsterBuilder:
         proto_monster = Monster.Monster()
         for entry in self.template:
             if entry in self.attach_hierarchy.keys():
-                print(entry)
-                proto_monster.torso[entry] =  {"AMOUNT" : self.template[entry]}
-            elif entry in self.attach_hierarchy["ARMS"]:
-                proto_monster.torso["ARMS"][entry] = self.template[entry]
+                for i in range(self.template[entry]):
+                    print("Entry: ", entry)
+                    proto_monster.torso.contains[entry + str(i)] = Bodypart.Bodypart(entry)
+           # elif entry in self.attach_hierarchy["ARMS"]:
+           #     proto_monster.torso["ARMS"][entry] = self.template[entry]
         return proto_monster

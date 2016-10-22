@@ -1,2 +1,4 @@
+import Bodypart
+
 class Monster:
-    torso = {}
+    torso = Bodypart.Bodypart("TORSO")

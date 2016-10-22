@@ -1,0 +1,6 @@
+arms: 3
+LEGS: 5
+Tails: 1
+wingS: 3
+neCKs: 6
+HEads: 6
