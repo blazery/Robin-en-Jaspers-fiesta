@@ -1,27 +1,35 @@
 import Bodypart
 
 class Monster:
-    torso = Bodypart.Bodypart("TORSO")
 
-    def calcTotalHP(self, par_hp = torso.hit_points, par_part = torso):
-        hp = par_hp
+    def __init__(self):
+        self.torso = Bodypart.Bodypart("TORSO")
+
+
+
+    def calcTotalHP(self):
+        hp = 0
+        par_part = self.torsos
+
 
         for part in par_part.contains:
             hp += part.hit_points
 
             if part.contains != {}:
-                hp += self.calcTotalHP(hp, part)
+                hp += self.calcTotalHP()
 
         return hp
 
-    def countEyes(self, par_part = torso):
+    def countBodyPart(self, part):
         eyes = 0
+        start_part = self.torso
 
-        for part in par_part.contains:
-            if part.part_type == "EYES":
+
+        for part in start_part.contains:
+            if part.part_type == part:
                 eyes += 1
 
-            if part.contains != {}:
-                eyes += self.countEyes(part)
+            if not part.contains:
+                eyes += self.countBodyPart(part)
 
         return eyes
