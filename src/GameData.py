@@ -38,13 +38,13 @@ class GameData:
                 except:
                     print("NO VALUE IN " + str(temp_key))
                     return
-
-                if temp_key in temp_dict:
-                    temp_array = temp_dict[temp_key]
-                    temp_array.append(temp_value)
-                    temp_dict[temp_key] = temp_array
-                else:
-                    temp_dict[temp_key] = [temp_value]
+                if temp_key in self.monster_properties:
+                    if temp_key in temp_dict:
+                        temp_array = temp_dict[temp_key]
+                        temp_array.append(temp_value)
+                        temp_dict[temp_key] = temp_array
+                    else:
+                        temp_dict[temp_key] = [temp_value]
         return temp_dict
 
 

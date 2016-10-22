@@ -1,0 +1,9 @@
+heads: 2
+arms: 2
+legs: 2
+horns: 4
+spikes: 3
+eyes: 4
+can fly: true
+torso: test
+Body Type: test a

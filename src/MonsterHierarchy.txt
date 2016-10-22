@@ -3,18 +3,11 @@ torso > legs
 torso > necks
 torso > tails
 torso > wings
-
-arms > hands
-arms > spikes
-
-legs > spikes
-legs > feet
-
-tails > spikes
-
-wings > spikes
+torso > tentacles
 
 necks > heads
+necks > gills
+necks > fins
 
 heads > horns
 heads > ears
@@ -22,4 +15,41 @@ heads > eyes
 heads > noses
 heads > gills
 heads > mouths
-heads > teeth
+
+arms > hands
+arms > spikes
+arms > claws
+arms > fins
+
+hands > mouths
+hands > spikes
+hands > eyes
+hands > claws
+
+legs > spikes
+legs > fins
+legs > feet
+
+feet > spikes
+feet > fins
+feet > wings
+
+tentacles > claws
+tentacles > spikes
+tentacles > horns
+tentacles > eyes
+tentacles > mouths
+tentacles > teeth
+tentacles > fins
+
+tails > spikes
+tails > tentacles
+tails > fins
+
+wings > spikes
+wings > claws
+wings > tentacles
+wings > hands
+
+
+
