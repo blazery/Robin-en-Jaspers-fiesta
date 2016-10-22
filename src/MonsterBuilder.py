@@ -1,4 +1,5 @@
 import Monster
+import Bodypart
 
 class MonsterBuilder:
     template = None
