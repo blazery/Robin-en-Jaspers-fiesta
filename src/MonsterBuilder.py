@@ -12,6 +12,7 @@ class MonsterBuilder:
         self.attach_hierarchy = GameData.GameData().monster_hierarchy
         self.slots = {}
         self.proto_monster = None
+        self.placed = {}
 
     def calcSpaceForBP(self):
         for hierarchy_part in self.attach_hierarchy:
@@ -35,15 +36,21 @@ class MonsterBuilder:
 
                         amount = math.ceil(self.template[hierarchy_part] / (self.slots[hierarchy_part] + 1))
                         for i in range(amount):
-                            body_part.contains.append(Bodypart.Bodypart(hierarchy_part))
+                            if self.placed[hierarchy_part] < self.template[hierarchy_part]:
+                                body_part.contains.append(Bodypart.Bodypart(hierarchy_part))
+                                self.placed[hierarchy_part] += 1
                     else:
                         amount =math.ceil( self.template[hierarchy_part] / self.slots[hierarchy_part])
                         for i in range(amount):
-                            body_part.contains.append(Bodypart.Bodypart(hierarchy_part))
+                            if self.placed[hierarchy_part] < self.template[hierarchy_part]:
+                                body_part.contains.append(Bodypart.Bodypart(hierarchy_part))
+                                self.placed[hierarchy_part] += 1
+
                 else:
                     for i in range(self.template[hierarchy_part]):
-                        body_part.contains.append(Bodypart.Bodypart(hierarchy_part))
-
+                        if self.placed[hierarchy_part] < self.template[hierarchy_part]:
+                            body_part.contains.append(Bodypart.Bodypart(hierarchy_part))
+                            self.placed[hierarchy_part] += 1
 
         for temp_part in body_part.contains:
             self.recursiveBuild(temp_part)
@@ -51,6 +58,10 @@ class MonsterBuilder:
     def buildMonster(self):
         proto_monster = Monster.Monster()
         self.calcSpaceForBP()
+
+        for x in self.template.keys():
+            self.placed[x] = 0
+
         self.recursiveBuild(proto_monster.torso)
 
 

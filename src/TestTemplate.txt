@@ -1,8 +1,18 @@
-arms: 2
-legs: 2
-feet: 2
-hands: 2
+heads: 2
+eyes: 4
+ears: 8
+mouths: 2
+horns: 4
 necks: 1
-heads: 1
-wings : 2
-tentacles: 3
+
+arms: 4
+hands: 2
+claws: 2
+
+legs: 4
+Feet: 4
+
+wings: 6
+
+tentacles: 8
+spikes: 10

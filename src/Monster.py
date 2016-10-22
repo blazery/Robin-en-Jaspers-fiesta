@@ -20,16 +20,15 @@ class Monster:
 
         return hp
 
-    def countBodyPart(self, part):
-        eyes = 0
-        start_part = self.torso
+    def countBodyPart(self, part, search):
+        count = 0
+        start_part = part
 
 
-        for part in start_part.contains:
-            if part.part_type == part:
-                eyes += 1
+        for temp_part in start_part.contains:
+            if temp_part.part_type == search:
+                count += 1
 
-            if not part.contains:
-                eyes += self.countBodyPart(part)
+            count += self.countBodyPart(temp_part, search)
 
-        return eyes
+        return count
