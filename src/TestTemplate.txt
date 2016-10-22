@@ -1,9 +1,13 @@
 Hands: 3
 wings: 2
 spikes: 3
-LEGS: 1
+LEGS: 3
 arms: 0
-feet: 1
+feet: 3
 Tails: 1
 neCKs: 1
+horns: 2
+hands: 3
 HEads: 1
+claws: 3
+tentacles: 2

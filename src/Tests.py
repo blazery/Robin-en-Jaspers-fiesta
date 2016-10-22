@@ -8,7 +8,6 @@ builder = MonsterBuilder.MonsterBuilder(test_template)
 print("Template as read from file: ", test_template, '\n')
 builder = MonsterBuilder.MonsterBuilder(test_template)
 for part in builder.buildMonster().torso.contains:
-    print("From template file: ", test_template, ": ", part)
+    print("From template file: ", part)
 
-builder.calcSpaceForBP()
 print("\nSlots for body parts: ", builder.slots)
