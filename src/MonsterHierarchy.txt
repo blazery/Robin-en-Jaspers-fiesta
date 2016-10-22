@@ -1,0 +1,25 @@
+torso > arms
+torso > legs
+torso > necks
+torso > tails
+torso > wings
+
+arms > hands
+arms > spikes
+
+legs > spikes
+legs > feet
+
+tails > spikes
+
+wings > spikes
+
+necks > heads
+
+heads > horns
+heads > ears
+heads > eyes
+heads > noses
+heads > gills
+heads > mouths
+heads > teeth

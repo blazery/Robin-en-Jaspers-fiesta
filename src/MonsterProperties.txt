@@ -1,6 +1,6 @@
-Head: int
-Torso:
-Body Type:
+Heads: int
+Torso: string
+Body Type: string
 Wings: int
 Can fly: bool
 Legs: int

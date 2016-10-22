@@ -12,6 +12,11 @@ class FileReader:
         except:
             print("LOADING FILE ERROR")
             print("File could not be found")
+
+            if self.last_read_file is not None:
+                print("returning last successfull monster")
+                return self.last_read_file
+
             return False
 
         properties_dictionary = dict()
@@ -26,6 +31,7 @@ class FileReader:
 
             if temp_key in self.properties:
                 if self.valueTypeValidate(temp_key, temp_value):
+                    print(type(temp_value))
                     properties_dictionary[temp_key] = temp_value
 
         self.last_read_file = properties_dictionary
@@ -35,12 +41,14 @@ class FileReader:
     def valueTypeValidate(self, key, value):
         if self.properties[key] == "int":
             if value.isdigit():
+                int(value)
                 return True
         elif self.properties[key] == "bool":
             if value.upper() == "TRUE" or value.upper() == "FALSE":
+                bool(value)
                 return True
         elif self.properties[key] == "string":
             if value.isalpha():
                 return True
-        else:
-            return False
+
+        return False
