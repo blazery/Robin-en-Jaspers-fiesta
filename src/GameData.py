@@ -4,7 +4,13 @@ class GameData:
 
     def __init__(self):
         # loads the monster properties
-        properties_file = open("MonsterProperties.txt", 'r')
+        self.monster_properties = self.dataReader("MonsterProperties.txt")
+        # loads the monster hierarchy
+        self.monster_hierarchy = self.dataReader("MonsterHierarchy.txt")
+
+    def dataReader(self, path):
+        properties_file = open(path, 'r')
+        temp_dict = dict()
 
         for s in properties_file.readlines():
             if s != "\n":
@@ -13,7 +19,8 @@ class GameData:
                 try:
                     temp_value = s.split(':')[1].strip(' ').strip('\n')
                 except:
-                    print("INVALID VALUE IN MONSTER PROPERTIES")
+                    print("NO VALUE IN " + str(temp_key))
                     return
 
-                self.monster_properties[temp_key] = temp_value
+                temp_dict[temp_key]= temp_value
+        return temp_dict

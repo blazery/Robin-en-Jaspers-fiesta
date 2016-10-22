@@ -12,6 +12,11 @@ class FileReader:
         except:
             print("LOADING FILE ERROR")
             print("File could not be found")
+
+            if self.last_read_file is not None:
+                print("returning last successfull monster")
+                return self.properties
+
             return False
 
         properties_dictionary = dict()
@@ -42,5 +47,5 @@ class FileReader:
         elif self.properties[key] == "string":
             if value.isalpha():
                 return True
-        else:
-            return False
+
+        return False
