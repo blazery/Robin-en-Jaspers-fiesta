@@ -23,3 +23,4 @@ for part in monster2.torso.contains:
     print("Parts: ", part.part_type)
     for partspart in part.contains:
         print("Partsparts: ", partspart.part_type)
+print("\nSlots for body parts: ", builder.slots)

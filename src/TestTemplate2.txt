@@ -2,5 +2,6 @@ legs: 4
 tails: 1
 necks:1
 Heads: 1
-Feet: 4
+Feet: 7
 wings: 2
+tentacles: 18
