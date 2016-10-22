@@ -1,0 +1,6 @@
+legs: 4
+tails: 1
+necks:1
+Heads: 1
+Feet: 4
+wings: 2
