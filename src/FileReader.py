@@ -15,7 +15,7 @@ class FileReader:
 
             if self.last_read_file is not None:
                 print("returning last successfull monster")
-                return self.properties
+                return self.last_read_file
 
             return False
 
