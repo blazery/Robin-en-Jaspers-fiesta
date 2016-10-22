@@ -27,7 +27,6 @@ class GameData:
 
     def loadHierarchy(self, path):
         properties_file = open(path, 'r')
-        temp_array = []
         temp_dict = dict()
 
         for s in properties_file.readlines():
@@ -40,15 +39,12 @@ class GameData:
                     print("NO VALUE IN " + str(temp_key))
                     return
 
-                if  temp_key in temp_dict:
+                if temp_key in temp_dict:
                     temp_array = temp_dict[temp_key]
                     temp_array.append(temp_value)
-                    temp_dict[temp_key]
-
-
-
-
+                    temp_dict[temp_key] = temp_array
+                else:
+                    temp_dict[temp_key] = [temp_value]
         return temp_dict
 
 
-test = GameData()
