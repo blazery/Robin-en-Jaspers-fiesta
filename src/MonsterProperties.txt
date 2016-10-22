@@ -25,3 +25,4 @@ Has gills: bool
 Noses: int
 Smell: bool
 Spikes: int
+Feet: int

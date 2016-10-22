@@ -13,7 +13,7 @@ class MonsterBuilder:
     def buildMonster(self):
         proto_monster = Monster.Monster()
         for entry in self.template:
-            if entry in self.attach_hierarchy.keys():
+            if entry in self.attach_hierarchy["TORSO"]:
                 for i in range(self.template[entry]):
                     print("Entry: ", entry)
                     proto_monster.torso.contains[entry + str(i)] = Bodypart.Bodypart(entry)

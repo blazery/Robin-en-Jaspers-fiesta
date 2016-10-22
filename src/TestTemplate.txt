@@ -1,6 +1,8 @@
-arms: 3
-LEGS: 5
+arms: 1
+Hands: 1
+LEGS: 1
+feet: 1
 Tails: 1
-wingS: 3
-neCKs: 6
-HEads: 6
+wingS: 1
+neCKs: 1
+HEads: 1
