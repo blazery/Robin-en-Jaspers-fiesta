@@ -1,8 +1,8 @@
-arms: 2
-legs: 2
-feet: 2
-hands: 2
 necks: 1
 heads: 1
-wings : 2
-tentacles: 3
+arms: 2
+hands:2
+spikes: 25
+claws: 4
+Legs: 2
+feet: 2

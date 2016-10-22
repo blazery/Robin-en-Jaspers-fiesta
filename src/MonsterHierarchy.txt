@@ -1,6 +1,6 @@
+torso > necks
 torso > arms
 torso > legs
-torso > necks
 torso > tails
 torso > wings
 torso > tentacles
@@ -51,5 +51,10 @@ wings > claws
 wings > tentacles
 wings > hands
 
-
+spikes >
+claws >
+eyes >
+ears >
+horns >
+mouths >
 
