@@ -16,7 +16,9 @@ for part in monster.torso.contains:
         for xd in partspart.contains:
             print("sadsadasdas: ", xd.part_type)
 
-
+monster.createBasicAttackList()
+for x in monster.findBodyPart(monster.torso, "CLAWS"):
+    print(x.part_type)
 print("\nSlots for body parts: ", builder.slots)
 
 
