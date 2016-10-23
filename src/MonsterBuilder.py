@@ -108,7 +108,10 @@ class MonsterBuilder:
             text.append(temp_text)
 
         monster = Monster.Monster()
-        monster.torso = self.recursiveMonsterLoad(monster.torso, text)
+        try:
+            monster.torso = self.recursiveMonsterLoad(monster.torso, text)
+        except:
+            print("Corrupt file")
         if monster.torso is not None:
             return monster
         else:
@@ -122,9 +125,9 @@ class MonsterBuilder:
 
         while counter < len(temp):
             items = temp[counter].split('>')
-            if items[0]in self.attach_hierarchy.keys():
-                if par_part.part_type == items[0]:
-                    if items[1] in self.attach_hierarchy[items[0]]:
+            if items[0]in self.attach_hierarchy.keys(): #skip to next line if incorrect may cause V
+                if par_part.part_type == items[0]: # skips back to torso if bodytype lower in hierarchy than parent in text
+                    if items[1] in self.attach_hierarchy[items[0]]: # skips to next line if incorrect may cause ^
                         temp_bodyPart = Bodypart.Bodypart(items[1])
                         par_part.contains.append(temp_bodyPart)
                         counter = self.recursiveMonsterLoad(temp_bodyPart, temp, (counter+1))
