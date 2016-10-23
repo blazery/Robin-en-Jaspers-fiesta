@@ -63,24 +63,6 @@ class MonsterBuilder:
             self.placed[x] = 0
 
         self.recursiveBuild(proto_monster.torso)
-
-
-
-
-        #for body_part in self.template:
-            #if not body_part in self.slots.keys():
-                ##if not self.template[body_part] == 0:
-                    #for i in range(self.template[body_part]):
-                        #proto_monster.torso.contains[body_part[:-1].lower() + str(i + 1)] = Bodypart.Bodypart(body_part)
-
-        #for entry in self.template:
-            #if entry in self.attach_hierarchy["TORSO"]:
-                #for i in range(self.template[entry]):
-                    #proto_monster.torso.contains[entry + str(i)] = Bodypart.Bodypart(entry)
-            #for torso_part in self.attach_hierarchy["TORSO"]:
-                #for i in range(self.template[entry]):
-                    #if entry in self.attach_hierarchy[torso_part] and torso_part in self.template.keys():
-                        #proto_monster.torso.contains
         return proto_monster
 
 
