@@ -144,4 +144,5 @@ class MonsterBuilder:
                         counter += 1
             else:
                 counter += 1
+        #returns at end of file
         return None
