@@ -109,7 +109,10 @@ class MonsterBuilder:
 
         monster = Monster.Monster()
         monster.torso = self.recursiveMonsterLoad(monster.torso, text)
-        return monster
+        if monster.torso is not None:
+            return monster
+        else:
+            return None
 
     def recursiveMonsterLoad(self, par_part, text, par_counter = 0):
         monster_part = par_part
@@ -119,15 +122,7 @@ class MonsterBuilder:
 
 
         while counter < len(temp):
-
-            #validates for white lines
-            while(True):
-                items = temp[counter].split('>')
-                if items[0] == "":
-                    counter += 1
-                else:
-                    break
-
+            items = temp[counter].split('>')
 
             if par_part.part_type == items[0]:
                 if items[1] in self.attach_hierarchy[items[0]] or items[0] == "TORSO":
@@ -137,7 +132,11 @@ class MonsterBuilder:
 
                     if counter is None or type(counter) == type(par_part):
                         return monster_part
-
+                else:
+                    #redesign this else to prevent errors in corrupt files
+                    break
             else:
                 return counter
 
+        print("FILE CORRUPT LOL DIDNT READ")
+        return None

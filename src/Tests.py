@@ -19,6 +19,7 @@ for part in monster.torso.contains:
 
 
 monster = builder.loadMonsterFile("firstMonsterSave")
+print(monster.torso.part_type)
 for part in monster.torso.contains:
     print("Parts: ", part.part_type)
     for partspart in part.contains:
