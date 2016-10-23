@@ -57,5 +57,4 @@ eyes >
 ears >
 horns >
 mouths >
-noses >
-fins >
+

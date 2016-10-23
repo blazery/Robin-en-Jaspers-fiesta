@@ -60,7 +60,7 @@ class Monster:
 
                     canAdd = True
                     for z in temp_array:
-                        if z.name == "Kick":
+                        if z.name == "Punch":
                             canAdd = False
                     if canAdd:
                         temp_array.append(Attack.Attack("Punch",dmg, "PHYSICAL", 75))

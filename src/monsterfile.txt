@@ -1,0 +1,17 @@
+torso > arms
+arms > hands
+
+torso > arms
+arms > hands
+
+torso > legs
+lesg > feet
+
+torso > legs
+legs> feet
+
+torso > wings
+wings > hands
+
+torso > wings
+wings > hands

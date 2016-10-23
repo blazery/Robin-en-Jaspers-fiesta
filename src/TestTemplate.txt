@@ -1,14 +1,10 @@
 necks: 1
 heads: 1
+
 arms: 2
 hands:2
-claws: 4
+
 Legs: 2
 feet: 2
-wings: 7
-tentacles: 7
-eyes: 4
-mouths: 4
-horns: 2
-ears: 2
-noses: 3
+
+spikes: 4
