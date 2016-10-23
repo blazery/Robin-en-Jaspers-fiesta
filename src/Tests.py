@@ -17,7 +17,7 @@ for part in monster.torso.contains:
         for xd in partspart.contains:
             print("sadsadasdas: ", xd.part_type)
 
-
+builder.monsterToFile(monster, "firstMonsterSave")
 monster = builder.loadMonsterFile("firstMonsterSave")
 print(monster.torso.part_type)
 for part in monster.torso.contains:

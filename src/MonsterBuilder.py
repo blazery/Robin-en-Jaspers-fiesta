@@ -131,7 +131,6 @@ class MonsterBuilder:
                         temp_bodyPart = Bodypart.Bodypart(items[1])
                         par_part.contains.append(temp_bodyPart)
                         counter = self.recursiveMonsterLoad(temp_bodyPart, temp, (counter+1))
-                        print(counter)
 
                         if counter is None or type(counter) == type(par_part):
                             return monster_part
@@ -145,5 +144,4 @@ class MonsterBuilder:
                         counter += 1
             else:
                 counter += 1
-        print("FILE CORRUPT LOL DIDNT READ")
         return None
