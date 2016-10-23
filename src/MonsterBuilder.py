@@ -108,8 +108,14 @@ class MonsterBuilder:
             text.append(temp_text)
 
         monster = Monster.Monster()
-        monster.torso = self.recursiveMonsterLoad(monster.torso, text)
-        return monster
+        try:
+            monster.torso = self.recursiveMonsterLoad(monster.torso, text)
+        except:
+            print("Corrupt file")
+        if monster.torso is not None:
+            return monster
+        else:
+            return None
 
     def recursiveMonsterLoad(self, par_part, text, par_counter = 0):
         monster_part = par_part
@@ -117,27 +123,26 @@ class MonsterBuilder:
         counter = par_counter
 
 
-
         while counter < len(temp):
+            items = temp[counter].split('>')
+            if items[0]in self.attach_hierarchy.keys(): #skip to next line if incorrect may cause V
+                if par_part.part_type == items[0]: # skips back to torso if bodytype lower in hierarchy than parent in text
+                    if items[1] in self.attach_hierarchy[items[0]]: # skips to next line if incorrect may cause ^
+                        temp_bodyPart = Bodypart.Bodypart(items[1])
+                        par_part.contains.append(temp_bodyPart)
+                        counter = self.recursiveMonsterLoad(temp_bodyPart, temp, (counter+1))
 
-            #validates for white lines
-            while(True):
-                items = temp[counter].split('>')
-                if items[0] == "":
-                    counter += 1
+                        if counter is None or type(counter) == type(par_part):
+                            return monster_part
+                    else:
+                        #redesign this else to prevent errors in corrupt files
+                        counter += 1
                 else:
-                    break
-
-
-            if par_part.part_type == items[0]:
-                if items[1] in self.attach_hierarchy[items[0]] or items[0] == "TORSO":
-                    temp_bodyPart = Bodypart.Bodypart(items[1])
-                    par_part.contains.append(temp_bodyPart)
-                    counter = self.recursiveMonsterLoad(temp_bodyPart, temp, (counter+1))
-
-                    if counter is None or type(counter) == type(par_part):
-                        return monster_part
-
+                    if par_part.part_type != "TORSO":
+                        return counter
+                    else:
+                        counter += 1
             else:
-                return counter
-
+                counter += 1
+        #returns at end of file
+        return None
