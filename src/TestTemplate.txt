@@ -5,6 +5,7 @@ arms: 2
 hands:2
 
 Legs: 2
-feet: 2
+feet: 3
+wings: 1
 
-spikes: 4
+spikes: 8
