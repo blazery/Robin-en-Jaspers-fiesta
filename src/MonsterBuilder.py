@@ -63,24 +63,81 @@ class MonsterBuilder:
             self.placed[x] = 0
 
         self.recursiveBuild(proto_monster.torso)
-
-
-
-
-        #for body_part in self.template:
-            #if not body_part in self.slots.keys():
-                ##if not self.template[body_part] == 0:
-                    #for i in range(self.template[body_part]):
-                        #proto_monster.torso.contains[body_part[:-1].lower() + str(i + 1)] = Bodypart.Bodypart(body_part)
-
-        #for entry in self.template:
-            #if entry in self.attach_hierarchy["TORSO"]:
-                #for i in range(self.template[entry]):
-                    #proto_monster.torso.contains[entry + str(i)] = Bodypart.Bodypart(entry)
-            #for torso_part in self.attach_hierarchy["TORSO"]:
-                #for i in range(self.template[entry]):
-                    #if entry in self.attach_hierarchy[torso_part] and torso_part in self.template.keys():
-                        #proto_monster.torso.contains
         return proto_monster
 
+
+    def monsterToFile(self, par_monster, file_name):
+        text_file = self.recursiveMonsterToFile(par_monster.torso)
+        name = file_name.split('.')[0].strip(' ')
+
+        file =open((name + ".mst"), 'w')
+        for x in text_file:
+            file.writelines(x + "\n")
+        file.close()
+
+        for x in text_file:
+            print(x)
+
+
+    def recursiveMonsterToFile(self, par_part, depth_counter = -1):
+        text_file = []
+        counter = depth_counter + 1
+        start_part = par_part
+
+        for temp_part in start_part.contains:
+            line = ('   '*counter) + start_part.part_type + '>' + temp_part.part_type
+            text_file.append(line)
+
+            text_file += self.recursiveMonsterToFile(temp_part, counter)
+
+        return text_file
+
+    def loadMonsterFile(self, par_path):
+        path = par_path.split('.')[0].strip(' ')
+        try:
+            file = open((path+".mst"), 'r')
+        except:
+            print("FILE READING ERROR")
+            print("MONSTER COULD NOT BE FOUND")
+            return
+
+        text = []
+
+        for x in file.readlines():
+            temp_text = x.strip(' ').strip("\n")
+            text.append(temp_text)
+
+        monster = Monster.Monster()
+        monster.torso = self.recursiveMonsterLoad(monster.torso, text)
+        return monster
+
+    def recursiveMonsterLoad(self, par_part, text, par_counter = 0):
+        monster_part = par_part
+        temp = text
+        counter = par_counter
+
+
+
+        while counter < len(temp):
+
+            #validates for white lines
+            while(True):
+                items = temp[counter].split('>')
+                if items[0] == "":
+                    counter += 1
+                else:
+                    break
+
+
+            if par_part.part_type == items[0]:
+                if items[1] in self.attach_hierarchy[items[0]] or items[0] == "TORSO":
+                    temp_bodyPart = Bodypart.Bodypart(items[1])
+                    par_part.contains.append(temp_bodyPart)
+                    counter = self.recursiveMonsterLoad(temp_bodyPart, temp, (counter+1))
+
+                    if counter is None or type(counter) == type(par_part):
+                        return monster_part
+
+            else:
+                return counter
 

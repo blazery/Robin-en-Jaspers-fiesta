@@ -1,8 +1,10 @@
 necks: 1
 heads: 1
+
 arms: 2
 hands:2
-spikes: 25
-claws: 4
+
 Legs: 2
 feet: 2
+
+spikes: 4
