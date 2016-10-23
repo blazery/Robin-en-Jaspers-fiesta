@@ -120,23 +120,27 @@ class MonsterBuilder:
         counter = par_counter
 
 
-
         while counter < len(temp):
             items = temp[counter].split('>')
+            if items[0]in self.attach_hierarchy.keys():
+                if par_part.part_type == items[0]:
+                    if items[1] in self.attach_hierarchy[items[0]]:
+                        temp_bodyPart = Bodypart.Bodypart(items[1])
+                        par_part.contains.append(temp_bodyPart)
+                        counter = self.recursiveMonsterLoad(temp_bodyPart, temp, (counter+1))
+                        print(counter)
 
-            if par_part.part_type == items[0]:
-                if items[1] in self.attach_hierarchy[items[0]] or items[0] == "TORSO":
-                    temp_bodyPart = Bodypart.Bodypart(items[1])
-                    par_part.contains.append(temp_bodyPart)
-                    counter = self.recursiveMonsterLoad(temp_bodyPart, temp, (counter+1))
-
-                    if counter is None or type(counter) == type(par_part):
-                        return monster_part
+                        if counter is None or type(counter) == type(par_part):
+                            return monster_part
+                    else:
+                        #redesign this else to prevent errors in corrupt files
+                        counter += 1
                 else:
-                    #redesign this else to prevent errors in corrupt files
-                    break
+                    if par_part.part_type != "TORSO":
+                        return counter
+                    else:
+                        counter += 1
             else:
-                return counter
-
+                counter += 1
         print("FILE CORRUPT LOL DIDNT READ")
         return None
