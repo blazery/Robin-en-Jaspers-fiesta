@@ -1,9 +1,21 @@
 import MonsterBuilder
 import FileReader
+import MonsterCreationView
 
 reader = FileReader.FileReader()
 test_template = reader.readFile("TestTemplate.txt")
 builder = MonsterBuilder.MonsterBuilder(test_template)
+view = MonsterCreationView.MonsterCreationView()
+
+print("test")
+monster = builder.buildMonster()
+view.Go(monster)
+
+
+
+
+
+
 
 print("Template as read from file: ", test_template, '\n')
 builder = MonsterBuilder.MonsterBuilder(test_template)
